@@ -1,0 +1,2400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SiteCraft | Professional Websites for Local Businesses — From £200</title>
+  <meta name="description" content="Affordable professional websites for London small businesses. New websites from £200, website renovations from £200, and monthly maintenance from £20/month. Fast turnaround, no hidden fees." />
+  <meta name="keywords" content="web design London, small business website, affordable web design, website renovation London, local business website" />
+  <meta name="author" content="SiteCraft" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://sitecraft.co.uk/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Professional Websites for London Businesses — From £200" />
+  <meta property="og:description" content="New websites, renovations, and monthly support for local London businesses. Flat-rate pricing, fast turnaround, no hidden fees." />
+  <meta property="og:url" content="https://sitecraft.co.uk/" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Professional Websites for London Businesses — From £200" />
+  <meta name="twitter:description" content="New websites, renovations, and monthly support for local London businesses." />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "SiteCraft",
+    "description": "Professional web design services for local London businesses. New websites, renovations, and monthly maintenance.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "London",
+      "addressCountry": "GB"
+    },
+    "priceRange": "££",
+    "serviceArea": {
+      "@type": "City",
+      "name": "London"
+    }
+  }
+  </script>
+
+  <style>
+    /* ─── Reset & Base ─────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:        #0b1120;
+      --navy-mid:    #111827;
+      --navy-light:  #1a2540;
+      --navy-card:   #162035;
+      --white:       #ffffff;
+      --off-white:   #e8edf5;
+      --blue:        #0ea5e9;
+      --blue-bright: #38bdf8;
+      --blue-glow:   rgba(14, 165, 233, 0.18);
+      --blue-border: rgba(14, 165, 233, 0.35);
+      --text-muted:  #94a3b8;
+      --text-body:   #cbd5e1;
+      --radius:      12px;
+      --radius-lg:   20px;
+      --shadow:      0 4px 24px rgba(0,0,0,0.35);
+      --shadow-glow: 0 0 40px rgba(14, 165, 233, 0.15);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      background: var(--navy);
+      color: var(--text-body);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ─── Scroll Animations ────────────────────────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+    /* ─── Navigation ───────────────────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 18px 0;
+      transition: background 0.3s, box-shadow 0.3s, padding 0.3s;
+    }
+    nav.scrolled {
+      background: rgba(11, 17, 32, 0.96);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 1px 0 rgba(14, 165, 233, 0.15);
+      padding: 12px 0;
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: -0.02em;
+    }
+    .nav-logo span { color: var(--blue); }
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.9rem;
+      color: var(--text-body);
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--blue-bright); }
+    .nav-cta {
+      background: var(--blue);
+      color: var(--white) !important;
+      padding: 9px 20px;
+      border-radius: 8px;
+      font-weight: 600 !important;
+      font-size: 0.875rem !important;
+      transition: background 0.2s, transform 0.15s !important;
+    }
+    .nav-cta:hover {
+      background: var(--blue-bright) !important;
+      transform: translateY(-1px);
+    }
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .nav-hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--white);
+      border-radius: 2px;
+      transition: transform 0.3s, opacity 0.3s;
+    }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    @media (max-width: 768px) {
+      .nav-hamburger { display: flex; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0; right: 0;
+        background: rgba(11, 17, 32, 0.98);
+        backdrop-filter: blur(12px);
+        flex-direction: column;
+        gap: 0;
+        padding: 12px 0 20px;
+        border-top: 1px solid var(--blue-border);
+      }
+      .nav-links.open { display: flex; }
+      .nav-links li { width: 100%; }
+      .nav-links a {
+        display: block;
+        padding: 13px 28px;
+        font-size: 1rem;
+      }
+      .nav-cta {
+        margin: 8px 28px 0;
+        text-align: center;
+        border-radius: 8px;
+      }
+    }
+
+    /* ─── Hero ─────────────────────────────────────────────────────── */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding: 120px 0 80px;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 60% 40%, rgba(14, 165, 233, 0.08) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 50% at 10% 80%, rgba(14, 165, 233, 0.05) 0%, transparent 60%),
+        linear-gradient(160deg, var(--navy) 0%, #0c1628 100%);
+    }
+    .hero-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(14, 165, 233, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(14, 165, 233, 0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+      mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 40%, transparent 100%);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 760px;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--blue-glow);
+      border: 1px solid var(--blue-border);
+      color: var(--blue-bright);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 100px;
+      margin-bottom: 24px;
+    }
+    .hero-badge::before {
+      content: '';
+      width: 7px; height: 7px;
+      background: var(--blue);
+      border-radius: 50%;
+      box-shadow: 0 0 8px var(--blue);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; box-shadow: 0 0 8px var(--blue); }
+      50%       { opacity: 0.6; box-shadow: 0 0 16px var(--blue); }
+    }
+    .hero-headline {
+      font-size: clamp(2.2rem, 5.5vw, 3.8rem);
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.12;
+      letter-spacing: -0.03em;
+      margin-bottom: 22px;
+    }
+    .hero-headline .accent { color: var(--blue); }
+    .hero-sub {
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      color: var(--text-body);
+      max-width: 560px;
+      margin-bottom: 40px;
+      line-height: 1.7;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--blue);
+      color: var(--white);
+      font-size: 1rem;
+      font-weight: 700;
+      padding: 15px 30px;
+      border-radius: var(--radius);
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      box-shadow: 0 4px 20px rgba(14, 165, 233, 0.35);
+    }
+    .btn-primary:hover {
+      background: var(--blue-bright);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(14, 165, 233, 0.45);
+    }
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: transparent;
+      color: var(--off-white);
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 14px 28px;
+      border-radius: var(--radius);
+      border: 1px solid rgba(255,255,255,0.15);
+      cursor: pointer;
+      transition: border-color 0.2s, color 0.2s, transform 0.15s;
+    }
+    .btn-secondary:hover {
+      border-color: var(--blue-border);
+      color: var(--blue-bright);
+      transform: translateY(-2px);
+    }
+    .hero-stats {
+      display: flex;
+      gap: 40px;
+      margin-top: 60px;
+      flex-wrap: wrap;
+    }
+    .stat { }
+    .stat-num {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -0.03em;
+    }
+    .stat-num span { color: var(--blue); }
+    .stat-label {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* ─── Section shared ───────────────────────────────────────────── */
+    section { padding: 96px 0; }
+    .section-label {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 14px;
+    }
+    .section-title {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+    .section-sub {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      max-width: 520px;
+      line-height: 1.7;
+      margin-bottom: 56px;
+    }
+    .divider {
+      width: 48px;
+      height: 3px;
+      background: var(--blue);
+      border-radius: 3px;
+      margin: 16px 0 20px;
+    }
+
+    /* ─── What I Do ────────────────────────────────────────────────── */
+    #services { background: var(--navy-mid); }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+    }
+    .service-card {
+      background: var(--navy-card);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: var(--radius-lg);
+      padding: 36px 32px;
+      transition: border-color 0.3s, transform 0.25s, box-shadow 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--blue), transparent);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .service-card:hover {
+      border-color: var(--blue-border);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-glow);
+    }
+    .service-card:hover::before { opacity: 1; }
+    .service-icon {
+      width: 52px; height: 52px;
+      background: var(--blue-glow);
+      border: 1px solid var(--blue-border);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+      font-size: 1.4rem;
+    }
+    .service-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+    .service-desc {
+      font-size: 0.93rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+    .service-price {
+      margin-top: 24px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--blue-glow);
+      border: 1px solid var(--blue-border);
+      color: var(--blue-bright);
+      font-size: 0.85rem;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 100px;
+    }
+
+    /* ─── Before & After ───────────────────────────────────────────── */
+    #transformations { background: var(--navy); }
+    .ba-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 860px;
+      margin: 0 auto;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: 0 8px 48px rgba(0,0,0,0.5);
+      user-select: none;
+      cursor: col-resize;
+    }
+    /* browser chrome bar */
+    .ba-chrome {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 16px;
+      position: relative;
+      z-index: 2;
+    }
+    .ba-chrome-dot {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+    }
+    .ba-chrome-bar {
+      flex: 1;
+      height: 20px;
+      border-radius: 4px;
+      margin-left: 8px;
+    }
+    /* before panel */
+    .ba-before {
+      background: #d4d0c8;
+      width: 100%;
+    }
+    .ba-before .ba-chrome { background: #c0bdb5; }
+    .ba-before .ba-chrome-dot:nth-child(1) { background: #ff5f57; }
+    .ba-before .ba-chrome-dot:nth-child(2) { background: #febc2e; }
+    .ba-before .ba-chrome-dot:nth-child(3) { background: #28c840; }
+    .ba-before .ba-chrome-bar { background: #b0ada5; }
+    .ba-before-body {
+      padding: 20px 24px 28px;
+      background: #d4d0c8;
+      min-height: 340px;
+    }
+    /* old site mock elements */
+    .old-header {
+      background: #4a4a8a;
+      padding: 12px 16px;
+      margin-bottom: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border: 2px outset #6a6aaa;
+    }
+    .old-logo {
+      font-family: 'Times New Roman', serif;
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: #ffff00;
+      text-shadow: 1px 1px 0 #000;
+    }
+    .old-nav { display: flex; gap: 6px; }
+    .old-nav-item {
+      background: #6a6aaa;
+      border: 1px outset #8888cc;
+      color: #fff;
+      font-size: 0.7rem;
+      padding: 3px 8px;
+      font-family: Arial, sans-serif;
+    }
+    .old-marquee {
+      background: #ff0000;
+      color: #ffff00;
+      font-size: 0.72rem;
+      font-family: 'Courier New', monospace;
+      padding: 4px 0;
+      text-align: center;
+      margin-bottom: 10px;
+      border: 1px solid #cc0000;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    .old-body { display: flex; gap: 10px; }
+    .old-sidebar {
+      width: 90px;
+      min-width: 90px;
+      background: #b8b4ac;
+      border: 1px solid #888;
+      padding: 8px;
+    }
+    .old-sidebar-item {
+      background: #4a4a8a;
+      color: #fff;
+      font-size: 0.62rem;
+      font-family: Arial, sans-serif;
+      padding: 4px 6px;
+      margin-bottom: 4px;
+      border: 1px outset #6a6aaa;
+      text-align: center;
+    }
+    .old-sidebar-img {
+      width: 100%;
+      height: 40px;
+      background: repeating-linear-gradient(45deg, #888 0px, #888 4px, #aaa 4px, #aaa 8px);
+      margin-top: 8px;
+      border: 1px solid #666;
+    }
+    .old-content { flex: 1; }
+    .old-content-title {
+      font-family: 'Times New Roman', serif;
+      font-size: 1rem;
+      font-weight: bold;
+      color: #00008b;
+      text-decoration: underline;
+      margin-bottom: 6px;
+    }
+    .old-content-text {
+      font-family: 'Times New Roman', serif;
+      font-size: 0.68rem;
+      color: #111;
+      line-height: 1.5;
+      margin-bottom: 8px;
+    }
+    .old-img-placeholder {
+      width: 100%;
+      height: 60px;
+      background: repeating-linear-gradient(90deg, #aaa 0px, #aaa 2px, #bbb 2px, #bbb 12px);
+      border: 1px solid #888;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.6rem;
+      color: #555;
+      font-family: Arial, sans-serif;
+    }
+    .old-counter {
+      text-align: center;
+      font-family: 'Courier New', monospace;
+      font-size: 0.62rem;
+      color: #333;
+      margin-top: 10px;
+      border-top: 1px solid #999;
+      padding-top: 6px;
+    }
+    .old-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.62rem;
+      font-family: Arial, sans-serif;
+      margin-top: 8px;
+    }
+    .old-table td {
+      border: 1px solid #888;
+      padding: 3px 5px;
+      background: #c8c4bc;
+      color: #000;
+    }
+    .old-table td:first-child { background: #b0ada5; font-weight: bold; }
+
+    /* after panel */
+    .ba-after {
+      position: absolute;
+      top: 0; left: 0;
+      width: 50%;
+      height: 100%;
+      overflow: hidden;
+      background: var(--navy-card);
+      z-index: 1;
+    }
+    .ba-after .ba-chrome { background: #1e293b; }
+    .ba-after .ba-chrome-dot:nth-child(1) { background: #ff5f57; }
+    .ba-after .ba-chrome-dot:nth-child(2) { background: #febc2e; }
+    .ba-after .ba-chrome-dot:nth-child(3) { background: #28c840; }
+    .ba-after .ba-chrome-bar { background: #334155; }
+    .ba-after-body {
+      padding: 20px 24px 28px;
+      background: var(--navy-card);
+      min-height: 340px;
+      width: 860px; /* fixed width so content doesn't reflow as slider moves */
+    }
+    /* new site mock elements */
+    .new-header {
+      background: linear-gradient(135deg, #0b1120, #162035);
+      border: 1px solid var(--blue-border);
+      border-radius: 10px;
+      padding: 12px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+    .new-logo {
+      font-weight: 800;
+      font-size: 0.9rem;
+      color: #fff;
+      letter-spacing: -0.02em;
+    }
+    .new-logo span { color: var(--blue); }
+    .new-nav { display: flex; gap: 12px; }
+    .new-nav-item {
+      font-size: 0.65rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    .new-nav-btn {
+      background: var(--blue);
+      color: #fff;
+      font-size: 0.62rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 5px;
+    }
+    .new-hero {
+      background: linear-gradient(135deg, #0b1120 0%, #0c1628 100%);
+      border: 1px solid rgba(14,165,233,0.15);
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 14px;
+      position: relative;
+      overflow: hidden;
+    }
+    .new-hero::after {
+      content: '';
+      position: absolute;
+      top: -20px; right: -20px;
+      width: 100px; height: 100px;
+      background: radial-gradient(circle, rgba(14,165,233,0.15) 0%, transparent 70%);
+    }
+    .new-hero-tag {
+      display: inline-block;
+      background: rgba(14,165,233,0.15);
+      border: 1px solid var(--blue-border);
+      color: var(--blue-bright);
+      font-size: 0.58rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 20px;
+      margin-bottom: 8px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .new-hero-title {
+      font-size: 1rem;
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.2;
+      margin-bottom: 6px;
+      letter-spacing: -0.02em;
+    }
+    .new-hero-title span { color: var(--blue); }
+    .new-hero-sub {
+      font-size: 0.62rem;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+      line-height: 1.5;
+    }
+    .new-hero-btn {
+      display: inline-block;
+      background: var(--blue);
+      color: #fff;
+      font-size: 0.65rem;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 6px;
+    }
+    .new-cards { display: flex; gap: 8px; }
+    .new-card {
+      flex: 1;
+      background: #162035;
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 8px;
+      padding: 10px;
+    }
+    .new-card-icon {
+      width: 24px; height: 24px;
+      background: rgba(14,165,233,0.15);
+      border-radius: 6px;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+    }
+    .new-card-title {
+      font-size: 0.65rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+    .new-card-text {
+      font-size: 0.55rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+    .new-card-price {
+      display: inline-block;
+      background: rgba(14,165,233,0.1);
+      border: 1px solid var(--blue-border);
+      color: var(--blue-bright);
+      font-size: 0.55rem;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 10px;
+      margin-top: 6px;
+    }
+
+    /* slider handle */
+    .ba-handle {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 3px;
+      height: 100%;
+      background: var(--blue);
+      z-index: 10;
+      transform: translateX(-50%);
+      box-shadow: 0 0 20px rgba(14,165,233,0.6);
+      cursor: col-resize;
+    }
+    .ba-handle-btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 40px; height: 40px;
+      background: var(--blue);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 20px rgba(14,165,233,0.5);
+      font-size: 0.8rem;
+      color: #fff;
+      white-space: nowrap;
+      gap: 2px;
+    }
+    .ba-labels {
+      position: absolute;
+      top: 16px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 16px;
+      z-index: 5;
+      pointer-events: none;
+    }
+    .ba-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 20px;
+    }
+    .ba-label-before {
+      background: rgba(0,0,0,0.5);
+      color: #ccc;
+    }
+    .ba-label-after {
+      background: var(--blue);
+      color: #fff;
+    }
+
+    /* ─── Pricing ──────────────────────────────────────────────────── */
+    #pricing { background: var(--navy); }
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+      align-items: start;
+    }
+    .pricing-card {
+      background: var(--navy-card);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: var(--radius-lg);
+      padding: 36px 32px;
+      transition: border-color 0.3s, transform 0.25s, box-shadow 0.3s;
+      position: relative;
+    }
+    .pricing-card.featured {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 1px rgba(14, 165, 233, 0.2), var(--shadow-glow);
+      transform: translateY(-6px);
+    }
+    .pricing-card:not(.featured):hover {
+      border-color: var(--blue-border);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-glow);
+    }
+    .featured-badge {
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--blue);
+      color: var(--white);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 5px 16px;
+      border-radius: 100px;
+      white-space: nowrap;
+    }
+    .pricing-name {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 16px;
+    }
+    .pricing-amount {
+      font-size: 3rem;
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -0.04em;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .pricing-amount sup {
+      font-size: 1.4rem;
+      font-weight: 700;
+      vertical-align: super;
+      line-height: 0;
+    }
+    .pricing-period {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-bottom: 28px;
+    }
+    .pricing-divider {
+      height: 1px;
+      background: rgba(255,255,255,0.07);
+      margin-bottom: 28px;
+    }
+    .pricing-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 13px;
+      margin-bottom: 32px;
+    }
+    .pricing-features li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.92rem;
+      color: var(--text-body);
+    }
+    .pricing-features li::before {
+      content: '';
+      display: block;
+      width: 18px;
+      height: 18px;
+      min-width: 18px;
+      background: var(--blue-glow);
+      border: 1px solid var(--blue-border);
+      border-radius: 50%;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2 6l3 3 5-5' stroke='%230ea5e9' stroke-width='1.8' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: center;
+      margin-top: 1px;
+    }
+    .btn-cta-full {
+      display: block;
+      text-align: center;
+      width: 100%;
+      background: var(--blue);
+      color: var(--white);
+      font-size: 0.95rem;
+      font-weight: 700;
+      padding: 14px;
+      border-radius: var(--radius);
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      box-shadow: 0 4px 16px rgba(14, 165, 233, 0.3);
+    }
+    .btn-cta-full:hover {
+      background: var(--blue-bright);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 22px rgba(14, 165, 233, 0.4);
+    }
+    .btn-outline-full {
+      display: block;
+      text-align: center;
+      width: 100%;
+      background: transparent;
+      color: var(--blue-bright);
+      font-size: 0.95rem;
+      font-weight: 700;
+      padding: 13px;
+      border-radius: var(--radius);
+      border: 1px solid var(--blue-border);
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s, transform 0.15s;
+    }
+    .btn-outline-full:hover {
+      background: var(--blue-glow);
+      transform: translateY(-1px);
+    }
+
+    /* ─── Why Choose Me ────────────────────────────────────────────── */
+    #why { background: var(--navy-mid); }
+    .why-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .why-visual {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .why-visual-box {
+      background: var(--navy-card);
+      border: 1px solid var(--blue-border);
+      border-radius: var(--radius-lg);
+      padding: 40px 36px;
+      width: 100%;
+      box-shadow: var(--shadow-glow);
+      position: relative;
+      overflow: hidden;
+    }
+    .why-visual-box::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -30%;
+      width: 220px;
+      height: 220px;
+      background: radial-gradient(circle, rgba(14,165,233,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .why-quote {
+      font-size: 1.05rem;
+      font-style: italic;
+      color: var(--off-white);
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+    .why-quote-mark {
+      font-size: 3rem;
+      color: var(--blue);
+      line-height: 0.5;
+      display: block;
+      margin-bottom: 16px;
+    }
+    .why-sig {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .why-sig-avatar {
+      width: 44px; height: 44px;
+      background: var(--blue-glow);
+      border: 2px solid var(--blue-border);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+    }
+    .why-sig-name {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--white);
+    }
+    .why-sig-role {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+    .why-points {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .why-point {
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+    }
+    .why-point-icon {
+      width: 46px; height: 46px;
+      min-width: 46px;
+      background: var(--blue-glow);
+      border: 1px solid var(--blue-border);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+    }
+    .why-point-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 5px;
+    }
+    .why-point-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+      .why-inner { grid-template-columns: 1fr; gap: 40px; }
+      .why-visual { order: -1; }
+    }
+
+    /* ─── Contact ──────────────────────────────────────────────────── */
+    #contact { background: var(--navy); }
+    .contact-inner {
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+      gap: 64px;
+      align-items: start;
+    }
+    .contact-info {}
+    .contact-detail {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+    .contact-icon {
+      width: 42px; height: 42px;
+      min-width: 42px;
+      background: var(--blue-glow);
+      border: 1px solid var(--blue-border);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+    }
+    .contact-detail-text {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+    }
+    .contact-detail-value {
+      font-size: 0.95rem;
+      color: var(--off-white);
+      font-weight: 500;
+    }
+    .whatsapp-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: #25D366;
+      color: var(--white);
+      font-size: 1rem;
+      font-weight: 700;
+      padding: 15px 28px;
+      border-radius: var(--radius);
+      border: none;
+      cursor: pointer;
+      margin-top: 32px;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
+      width: 100%;
+    }
+    .whatsapp-btn:hover {
+      background: #1fba59;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(37, 211, 102, 0.4);
+    }
+    .whatsapp-icon {
+      width: 22px;
+      height: 22px;
+      fill: white;
+    }
+    .form-card {
+      background: var(--navy-card);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: var(--radius-lg);
+      padding: 40px 36px;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-group label {
+      display: block;
+      font-size: 0.83rem;
+      font-weight: 600;
+      color: var(--off-white);
+      margin-bottom: 7px;
+      letter-spacing: 0.02em;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: var(--radius);
+      padding: 12px 16px;
+      font-size: 0.95rem;
+      color: var(--white);
+      font-family: inherit;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      outline: none;
+      appearance: none;
+      -webkit-appearance: none;
+    }
+    .form-group select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2394a3b8' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      padding-right: 40px;
+      cursor: pointer;
+    }
+    .form-group select option {
+      background: var(--navy-mid);
+      color: var(--white);
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.12);
+    }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: #475569;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .form-submit {
+      width: 100%;
+      background: var(--blue);
+      color: var(--white);
+      font-size: 1rem;
+      font-weight: 700;
+      padding: 15px;
+      border-radius: var(--radius);
+      border: none;
+      cursor: pointer;
+      margin-top: 8px;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      box-shadow: 0 4px 16px rgba(14, 165, 233, 0.3);
+      font-family: inherit;
+    }
+    .form-submit:hover {
+      background: var(--blue-bright);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(14, 165, 233, 0.4);
+    }
+    .form-note {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      text-align: center;
+      margin-top: 12px;
+    }
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 32px;
+    }
+    .form-success-icon {
+      font-size: 3rem;
+      margin-bottom: 16px;
+    }
+    .form-success h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+    .form-success p {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+    }
+
+    @media (max-width: 768px) {
+      .contact-inner { grid-template-columns: 1fr; gap: 40px; }
+      .form-row { grid-template-columns: 1fr; }
+      .form-card { padding: 28px 22px; }
+    }
+
+    /* ─── Footer ───────────────────────────────────────────────────── */
+    footer {
+      background: #070c18;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 40px 0;
+    }
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .footer-logo {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--white);
+    }
+    .footer-logo span { color: var(--blue); }
+    .footer-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+    .footer-links a {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--blue-bright); }
+    .footer-copy {
+      font-size: 0.8rem;
+      color: #475569;
+      width: 100%;
+      text-align: center;
+      margin-top: 4px;
+    }
+
+    /* ─── Floating WhatsApp ────────────────────────────────────────── */
+    .float-whatsapp {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      z-index: 200;
+      width: 56px; height: 56px;
+      background: #25D366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .float-whatsapp:hover {
+      transform: scale(1.1);
+      box-shadow: 0 8px 28px rgba(37, 211, 102, 0.5);
+    }
+    .float-whatsapp svg {
+      width: 28px; height: 28px;
+      fill: white;
+    }
+
+    /* ─── Chatbot ───────────────────────────────────────────────────── */
+    .chat-bubble {
+      position: fixed;
+      bottom: 28px;
+      left: 28px;
+      z-index: 200;
+      width: 56px; height: 56px;
+      background: var(--blue);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(14, 165, 233, 0.45);
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+      border: none;
+    }
+    .chat-bubble:hover {
+      transform: scale(1.1);
+      box-shadow: 0 8px 28px rgba(14, 165, 233, 0.55);
+    }
+    .chat-bubble svg { width: 26px; height: 26px; fill: white; transition: opacity 0.2s; }
+    .chat-bubble .icon-close { display: none; }
+    .chat-bubble.open .icon-chat  { display: none; }
+    .chat-bubble.open .icon-close { display: block; }
+
+    .chat-notification {
+      position: absolute;
+      top: -4px; right: -4px;
+      width: 18px; height: 18px;
+      background: #ef4444;
+      border-radius: 50%;
+      border: 2px solid var(--navy);
+      font-size: 0.6rem;
+      font-weight: 800;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .chat-window {
+      position: fixed;
+      bottom: 98px;
+      left: 28px;
+      z-index: 199;
+      width: 340px;
+      max-height: 520px;
+      background: var(--navy-card);
+      border: 1px solid var(--blue-border);
+      border-radius: var(--radius-lg);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(16px) scale(0.97);
+      pointer-events: none;
+      transition: opacity 0.25s ease, transform 0.25s ease;
+      transform-origin: bottom left;
+    }
+    .chat-window.open {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      pointer-events: all;
+    }
+
+    .chat-header {
+      background: linear-gradient(135deg, #0b1f40, #0d2550);
+      border-bottom: 1px solid var(--blue-border);
+      padding: 16px 18px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .chat-avatar {
+      width: 38px; height: 38px;
+      background: var(--blue-glow);
+      border: 2px solid var(--blue);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .chat-header-name {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--white);
+    }
+    .chat-header-status {
+      font-size: 0.72rem;
+      color: #4ade80;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      margin-top: 2px;
+    }
+    .chat-header-status::before {
+      content: '';
+      width: 6px; height: 6px;
+      background: #4ade80;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .chat-messages {
+      flex: 1;
+      overflow-y: auto;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      scroll-behavior: smooth;
+    }
+    .chat-messages::-webkit-scrollbar { width: 4px; }
+    .chat-messages::-webkit-scrollbar-track { background: transparent; }
+    .chat-messages::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 4px; }
+
+    .chat-msg {
+      display: flex;
+      gap: 8px;
+      align-items: flex-end;
+      animation: msgIn 0.25s ease forwards;
+    }
+    @keyframes msgIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .chat-msg.user { flex-direction: row-reverse; }
+    .chat-msg-avatar {
+      width: 26px; height: 26px;
+      background: var(--blue-glow);
+      border: 1px solid var(--blue-border);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      flex-shrink: 0;
+    }
+    .chat-msg-bubble {
+      max-width: 78%;
+      padding: 10px 13px;
+      border-radius: 14px;
+      font-size: 0.85rem;
+      line-height: 1.5;
+    }
+    .chat-msg.bot .chat-msg-bubble {
+      background: var(--navy-light);
+      color: var(--text-body);
+      border-bottom-left-radius: 4px;
+    }
+    .chat-msg.user .chat-msg-bubble {
+      background: var(--blue);
+      color: white;
+      border-bottom-right-radius: 4px;
+    }
+
+    .chat-typing {
+      display: flex;
+      gap: 8px;
+      align-items: flex-end;
+    }
+    .chat-typing-avatar {
+      width: 26px; height: 26px;
+      background: var(--blue-glow);
+      border: 1px solid var(--blue-border);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      flex-shrink: 0;
+    }
+    .chat-typing-bubble {
+      background: var(--navy-light);
+      border-radius: 14px;
+      border-bottom-left-radius: 4px;
+      padding: 10px 14px;
+      display: flex;
+      gap: 4px;
+      align-items: center;
+    }
+    .chat-typing-bubble span {
+      width: 6px; height: 6px;
+      background: var(--text-muted);
+      border-radius: 50%;
+      display: inline-block;
+      animation: typingDot 1.2s infinite ease-in-out;
+    }
+    .chat-typing-bubble span:nth-child(2) { animation-delay: 0.2s; }
+    .chat-typing-bubble span:nth-child(3) { animation-delay: 0.4s; }
+    @keyframes typingDot {
+      0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
+      30%            { transform: translateY(-5px); opacity: 1; }
+    }
+
+    .chat-options {
+      padding: 0 16px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+    .chat-option {
+      background: transparent;
+      border: 1px solid var(--blue-border);
+      color: var(--blue-bright);
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 9px 14px;
+      border-radius: 20px;
+      cursor: pointer;
+      text-align: left;
+      font-family: inherit;
+      transition: background 0.2s, color 0.2s, border-color 0.2s;
+    }
+    .chat-option:hover {
+      background: var(--blue-glow);
+      border-color: var(--blue);
+      color: white;
+    }
+
+    .chat-input-row {
+      padding: 12px 14px;
+      border-top: 1px solid rgba(255,255,255,0.07);
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+    .chat-input {
+      flex: 1;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 20px;
+      padding: 9px 14px;
+      font-size: 0.85rem;
+      color: var(--white);
+      font-family: inherit;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .chat-input:focus { border-color: var(--blue); }
+    .chat-input::placeholder { color: #475569; }
+    .chat-send {
+      width: 34px; height: 34px;
+      background: var(--blue);
+      border: none;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      flex-shrink: 0;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .chat-send:hover { background: var(--blue-bright); transform: scale(1.05); }
+    .chat-send svg { width: 15px; height: 15px; fill: white; }
+
+    @media (max-width: 480px) {
+      .chat-window { left: 12px; right: 12px; width: auto; bottom: 90px; }
+      .chat-bubble { left: 16px; bottom: 16px; }
+    }
+
+    /* ─── Misc ─────────────────────────────────────────────────────── */
+    @media (max-width: 480px) {
+      section { padding: 72px 0; }
+      .hero-stats { gap: 24px; }
+      .pricing-card.featured { transform: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Navigation ──────────────────────────────────────────────── -->
+  <nav id="navbar">
+    <div class="container nav-inner">
+      <a href="#hero" class="nav-logo">Site<span>Craft</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#transformations">Before &amp; After</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#why">Why Me</a></li>
+        <li><a href="#contact" class="nav-cta">Get a Free Quote</a></li>
+      </ul>
+      <div class="nav-hamburger" id="hamburger" aria-label="Menu" role="button" tabindex="0">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ── Hero ────────────────────────────────────────────────────── -->
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-grid"></div>
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge reveal">Based in London, UK</div>
+        <h1 class="hero-headline reveal reveal-delay-1">
+          Professional Websites<br />
+          for Local Businesses —<br />
+          <span class="accent">From £200</span>
+        </h1>
+        <p class="hero-sub reveal reveal-delay-2">
+          Whether you need a brand new website or your existing one is outdated and broken,
+          I help London businesses get online and look the part — fast, affordable, and no nonsense.
+        </p>
+        <div class="hero-actions reveal reveal-delay-3">
+          <a href="#contact" class="btn-primary">
+            Get a Free Quote
+            <svg width="16" height="16" fill="none" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="#services" class="btn-secondary">
+            See What I Do
+          </a>
+        </div>
+        <div class="hero-stats reveal reveal-delay-4">
+          <div class="stat">
+            <div class="stat-num"><span>£</span>200</div>
+            <div class="stat-label">Flat-rate websites</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num"><span>£</span>20<span style="font-size:1rem">/mo</span></div>
+            <div class="stat-label">Monthly support</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">0</div>
+            <div class="stat-label">Hidden fees</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── What I Do ────────────────────────────────────────────────── -->
+  <section id="services">
+    <div class="container">
+      <span class="section-label reveal">What I Do</span>
+      <h2 class="section-title reveal reveal-delay-1">Everything your business needs online</h2>
+      <div class="divider reveal reveal-delay-1"></div>
+      <p class="section-sub reveal reveal-delay-2">
+        I specialise in working with local London businesses — tradesmen, retailers, restaurants,
+        service providers — who need a website that works and looks professional.
+      </p>
+      <div class="services-grid">
+        <div class="service-card reveal reveal-delay-1">
+          <div class="service-icon">🌐</div>
+          <h3 class="service-title">New Websites</h3>
+          <p class="service-desc">
+            No website at all? I'll build you a clean, fast, mobile-friendly site from scratch.
+            Designed to attract local customers and show off your business at its best.
+            Includes all the essentials: contact form, services page, Google Maps, and more.
+          </p>
+          <div class="service-price">From £200 one-off</div>
+        </div>
+        <div class="service-card reveal reveal-delay-2">
+          <div class="service-icon">🔧</div>
+          <h3 class="service-title">Website Renovation</h3>
+          <p class="service-desc">
+            Got an old, embarrassing, or broken website? I'll rebuild it from the ground up —
+            modernised design, working on all devices, and actually helping your business instead
+            of hurting it. You keep your domain and content.
+          </p>
+          <div class="service-price">From £200 one-off</div>
+        </div>
+        <div class="service-card reveal reveal-delay-3">
+          <div class="service-icon">🛡️</div>
+          <h3 class="service-title">Monthly Maintenance</h3>
+          <p class="service-desc">
+            Once your site is live, I keep it running smoothly. Regular backups, content updates,
+            security patches, and a real person to call when something needs changing.
+            No more stale websites or broken contact forms.
+          </p>
+          <div class="service-price">£20/month</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Before & After ──────────────────────────────────────────── -->
+  <section id="transformations">
+    <div class="container">
+      <span class="section-label reveal">Transformations</span>
+      <h2 class="section-title reveal reveal-delay-1">From outdated to outstanding</h2>
+      <div class="divider reveal reveal-delay-1"></div>
+      <p class="section-sub reveal reveal-delay-2">
+        Drag the slider to see the difference a renovation makes. Old, broken websites rebuilt into something your customers actually trust.
+      </p>
+      <div class="ba-wrapper reveal reveal-delay-2" id="baWrapper">
+
+        <!-- BEFORE (underneath) -->
+        <div class="ba-before">
+          <div class="ba-chrome">
+            <div class="ba-chrome-dot"></div>
+            <div class="ba-chrome-dot"></div>
+            <div class="ba-chrome-dot"></div>
+            <div class="ba-chrome-bar"></div>
+          </div>
+          <div class="ba-before-body">
+            <div class="old-header">
+              <div class="old-logo">⚡ SMITH ELECTRICS</div>
+              <div class="old-nav">
+                <div class="old-nav-item">Home</div>
+                <div class="old-nav-item">About</div>
+                <div class="old-nav-item">Contact</div>
+              </div>
+            </div>
+            <div class="old-marquee">★ WELCOME TO OUR WEBSITE ★ CALL US TODAY ★ BEST PRICES IN LONDON ★ OPEN 7 DAYS ★</div>
+            <div class="old-body">
+              <div class="old-sidebar">
+                <div class="old-sidebar-item">Services</div>
+                <div class="old-sidebar-item">Gallery</div>
+                <div class="old-sidebar-item">Prices</div>
+                <div class="old-sidebar-item">Find Us</div>
+                <div class="old-sidebar-img"></div>
+              </div>
+              <div class="old-content">
+                <div class="old-content-title">Welcome to Smith Electrics!!</div>
+                <div class="old-img-placeholder">[ IMAGE ]</div>
+                <div class="old-content-text">
+                  We are a electrical company based in london. We do all types of electrical work for homes and business's. Call us for a free quote!! We have been trading since 1998 and have many satisfied customers.
+                </div>
+                <table class="old-table">
+                  <tr><td>Phone</td><td>020 7000 0000</td></tr>
+                  <tr><td>Email</td><td>smith@hotmail.com</td></tr>
+                  <tr><td>Hours</td><td>Mon-Sat 8am-6pm</td></tr>
+                </table>
+                <div class="old-counter">Visitor #: 000842 | Last updated: 14/03/2009</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- AFTER (on top, clipped) -->
+        <div class="ba-after" id="baAfter">
+          <div class="ba-chrome">
+            <div class="ba-chrome-dot"></div>
+            <div class="ba-chrome-dot"></div>
+            <div class="ba-chrome-dot"></div>
+            <div class="ba-chrome-bar"></div>
+          </div>
+          <div class="ba-after-body">
+            <div class="new-header">
+              <div class="new-logo">Smith<span>Electrics</span></div>
+              <div class="new-nav">
+                <div class="new-nav-item">Services</div>
+                <div class="new-nav-item">About</div>
+                <div class="new-nav-btn">Get a Quote</div>
+              </div>
+            </div>
+            <div class="new-hero">
+              <div class="new-hero-tag">⚡ London Electricians</div>
+              <div class="new-hero-title">Expert Electrical Work<br /><span>You Can Trust</span></div>
+              <div class="new-hero-sub">Residential &amp; commercial electrical services across London. Fast, reliable, fully certified.</div>
+              <div class="new-hero-btn">Get a Free Quote →</div>
+            </div>
+            <div class="new-cards">
+              <div class="new-card">
+                <div class="new-card-icon">🏠</div>
+                <div class="new-card-title">Residential</div>
+                <div class="new-card-text">Rewiring, fuse boards, sockets &amp; lighting.</div>
+                <div class="new-card-price">From £80</div>
+              </div>
+              <div class="new-card">
+                <div class="new-card-icon">🏢</div>
+                <div class="new-card-title">Commercial</div>
+                <div class="new-card-text">Office fit-outs, PAT testing, 3-phase.</div>
+                <div class="new-card-price">Get a quote</div>
+              </div>
+              <div class="new-card">
+                <div class="new-card-icon">🚨</div>
+                <div class="new-card-title">Emergency</div>
+                <div class="new-card-text">24/7 callouts across all London boroughs.</div>
+                <div class="new-card-price">Available now</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Labels -->
+        <div class="ba-labels">
+          <div class="ba-label ba-label-before">Before</div>
+          <div class="ba-label ba-label-after">After</div>
+        </div>
+
+        <!-- Handle -->
+        <div class="ba-handle" id="baHandle">
+          <div class="ba-handle-btn">◀▶</div>
+        </div>
+
+      </div>
+      <p style="text-align:center;font-size:0.82rem;color:var(--text-muted);margin-top:16px;">
+        ← Drag to compare → &nbsp;·&nbsp; Results like this for £200 one-off
+      </p>
+    </div>
+  </section>
+
+  <!-- ── Pricing ───────────────────────────────────────────────────── -->
+  <section id="pricing">
+    <div class="container">
+      <span class="section-label reveal">Pricing</span>
+      <h2 class="section-title reveal reveal-delay-1">Simple, honest pricing</h2>
+      <div class="divider reveal reveal-delay-1"></div>
+      <p class="section-sub reveal reveal-delay-2">
+        No quotes that double halfway through. No surprise invoices. Just flat rates that work
+        for small businesses.
+      </p>
+      <div class="pricing-grid">
+
+        <!-- New Website -->
+        <div class="pricing-card reveal reveal-delay-1">
+          <p class="pricing-name">New Website</p>
+          <div class="pricing-amount"><sup>£</sup>200</div>
+          <p class="pricing-period">one-off payment</p>
+          <div class="pricing-divider"></div>
+          <ul class="pricing-features">
+            <li>Custom-designed from scratch</li>
+            <li>Mobile-responsive on all devices</li>
+            <li>Up to 5 pages included</li>
+            <li>Contact form &amp; Google Maps</li>
+            <li>Basic SEO setup</li>
+            <li>Fast loading &amp; secure (HTTPS)</li>
+            <li>Deployed to your domain</li>
+          </ul>
+          <a href="#contact" class="btn-outline-full">Get Started</a>
+        </div>
+
+        <!-- Website Renovation -->
+        <div class="pricing-card featured reveal reveal-delay-2">
+          <div class="featured-badge">Most Popular</div>
+          <p class="pricing-name">Website Renovation</p>
+          <div class="pricing-amount"><sup>£</sup>200</div>
+          <p class="pricing-period">one-off payment</p>
+          <div class="pricing-divider"></div>
+          <ul class="pricing-features">
+            <li>Full redesign &amp; rebuild</li>
+            <li>Keep your existing domain</li>
+            <li>All existing content migrated</li>
+            <li>Mobile-responsive overhaul</li>
+            <li>Speed &amp; SEO improvements</li>
+            <li>Broken links &amp; forms fixed</li>
+            <li>Modern, professional look</li>
+          </ul>
+          <a href="#contact" class="btn-cta-full">Get Started</a>
+        </div>
+
+        <!-- Monthly Support -->
+        <div class="pricing-card reveal reveal-delay-3">
+          <p class="pricing-name">Monthly Support</p>
+          <div class="pricing-amount"><sup>£</sup>20</div>
+          <p class="pricing-period">per month, cancel anytime</p>
+          <div class="pricing-divider"></div>
+          <ul class="pricing-features">
+            <li>Regular offsite backups</li>
+            <li>Content updates on request</li>
+            <li>Security &amp; software patches</li>
+            <li>Uptime monitoring</li>
+            <li>Priority support via WhatsApp</li>
+            <li>Monthly check-in report</li>
+            <li>No long-term contract</li>
+          </ul>
+          <a href="#contact" class="btn-outline-full">Get Started</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Why Choose Me ────────────────────────────────────────────── -->
+  <section id="why">
+    <div class="container">
+      <div class="why-inner">
+        <div>
+          <span class="section-label reveal">Why Choose Me</span>
+          <h2 class="section-title reveal reveal-delay-1">A web designer who actually gets local business</h2>
+          <div class="divider reveal reveal-delay-1"></div>
+          <div class="why-points">
+            <div class="why-point reveal reveal-delay-1">
+              <div class="why-point-icon">⚡</div>
+              <div>
+                <div class="why-point-title">Fast Turnaround</div>
+                <div class="why-point-desc">Most sites are built and live within 7–10 days. No waiting months for a finished product.</div>
+              </div>
+            </div>
+            <div class="why-point reveal reveal-delay-2">
+              <div class="why-point-icon">💷</div>
+              <div>
+                <div class="why-point-title">Affordable Flat Pricing</div>
+                <div class="why-point-desc">£200 is what you pay. Not a deposit on a moving target. One price, one invoice, done.</div>
+              </div>
+            </div>
+            <div class="why-point reveal reveal-delay-3">
+              <div class="why-point-icon">🔒</div>
+              <div>
+                <div class="why-point-title">No Hidden Fees</div>
+                <div class="why-point-desc">No monthly platform fees, no licensing costs, no surprise charges six months later.</div>
+              </div>
+            </div>
+            <div class="why-point reveal reveal-delay-4">
+              <div class="why-point-icon">📞</div>
+              <div>
+                <div class="why-point-title">Ongoing Support Available</div>
+                <div class="why-point-desc">Need something changed after launch? I'm a real person based in London, reachable on WhatsApp.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="why-visual reveal reveal-delay-2">
+          <div class="why-visual-box">
+            <span class="why-quote-mark">"</span>
+            <p class="why-quote">
+              I don't build websites for Silicon Valley startups. I build them for electricians,
+              cafés, plumbers, and shops — the kind of businesses that make London work.
+              You deserve a professional web presence without the agency price tag.
+            </p>
+            <div class="why-sig">
+              <div class="why-sig-avatar">👋</div>
+              <div>
+                <div class="why-sig-name">Your Web Designer</div>
+                <div class="why-sig-role">London-based · Available now</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Contact ───────────────────────────────────────────────────── -->
+  <section id="contact">
+    <div class="container">
+      <div class="contact-inner">
+        <div>
+          <span class="section-label reveal">Get In Touch</span>
+          <h2 class="section-title reveal reveal-delay-1">Let's talk about your website</h2>
+          <div class="divider reveal reveal-delay-1"></div>
+          <p class="section-sub reveal reveal-delay-2" style="margin-bottom: 32px;">
+            Fill in the form and I'll get back to you within a few hours. Or if you'd rather
+            chat directly, hit the WhatsApp button below.
+          </p>
+          <div class="reveal reveal-delay-2">
+            <div class="contact-detail">
+              <div class="contact-icon">📍</div>
+              <div>
+                <div class="contact-detail-text">Based in</div>
+                <div class="contact-detail-value">London, United Kingdom</div>
+              </div>
+            </div>
+            <div class="contact-detail">
+              <div class="contact-icon">⏱️</div>
+              <div>
+                <div class="contact-detail-text">Response time</div>
+                <div class="contact-detail-value">Usually within a few hours</div>
+              </div>
+            </div>
+            <div class="contact-detail">
+              <div class="contact-icon">💬</div>
+              <div>
+                <div class="contact-detail-text">Preferred contact</div>
+                <div class="contact-detail-value">WhatsApp or the form</div>
+              </div>
+            </div>
+          </div>
+          <a href="https://wa.me/447535056319?text=Hi%2C%20I%27d%20like%20a%20free%20quote%20for%20a%20website" target="_blank" rel="noopener" class="whatsapp-btn reveal reveal-delay-3">
+            <svg class="whatsapp-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+            </svg>
+            Chat on WhatsApp
+          </a>
+        </div>
+
+        <!-- Form -->
+        <div class="form-card reveal reveal-delay-2">
+          <form id="contactForm" name="contact" data-netlify="true" netlify-honeypot="bot-field" onsubmit="handleSubmit(event)">
+            <input type="hidden" name="form-name" value="contact" />
+            <p style="display:none"><input name="bot-field" /></p>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" placeholder="John Smith" required />
+              </div>
+              <div class="form-group">
+                <label for="business">Business Name</label>
+                <input type="text" id="business" name="business" placeholder="Smith Plumbing Ltd" required />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="07700 000000" />
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="john@example.com" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="service">What do you need?</label>
+              <select id="service" name="service" required>
+                <option value="" disabled selected>Please select…</option>
+                <option value="new">I need a new website</option>
+                <option value="renovation">I need my website renovated</option>
+                <option value="both">I need both</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Anything else? <span style="color:#475569;font-weight:400">(optional)</span></label>
+              <textarea id="message" name="message" rows="3" placeholder="Tell me a bit about your business or what you have in mind…"></textarea>
+            </div>
+            <button type="submit" class="form-submit">Send My Enquiry</button>
+            <p class="form-note">No spam. I'll reply within a few hours.</p>
+          </form>
+          <div class="form-success" id="formSuccess">
+            <div class="form-success-icon">✅</div>
+            <h3>Message received!</h3>
+            <p>Thanks for getting in touch. I'll get back to you within a few hours. In the meantime, feel free to message on WhatsApp.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ───────────────────────────────────────────────────── -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-logo">Site<span>Craft</span></div>
+        <ul class="footer-links">
+          <li><a href="#services">Services</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#why">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <p class="footer-copy">© 2026 SiteCraft · Professional web design for local businesses · London, UK</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ── Floating WhatsApp ─────────────────────────────────────────── -->
+  <a class="float-whatsapp" href="https://wa.me/447535056319?text=Hi%2C%20I%27d%20like%20a%20free%20quote%20for%20a%20website" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+    </svg>
+  </a>
+
+  <!-- ── Chatbot ──────────────────────────────────────────────────── -->
+  <button class="chat-bubble" id="chatBubble" aria-label="Open chat">
+    <div class="chat-notification" id="chatNotif">1</div>
+    <svg class="icon-chat" viewBox="0 0 24 24"><path d="M20 2H4a2 2 0 00-2 2v18l4-4h14a2 2 0 002-2V4a2 2 0 00-2-2zm-2 10H6V10h12v2zm0-3H6V7h12v2z"/></svg>
+    <svg class="icon-close" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12" stroke="white" stroke-width="2.2" stroke-linecap="round" fill="none"/></svg>
+  </button>
+
+  <div class="chat-window" id="chatWindow" role="dialog" aria-label="Chat with Craft">
+    <div class="chat-header">
+      <div class="chat-avatar">🤖</div>
+      <div>
+        <div class="chat-header-name">Craft — SiteCraft Assistant</div>
+        <div class="chat-header-status">Online now</div>
+      </div>
+    </div>
+    <div class="chat-messages" id="chatMessages"></div>
+    <div class="chat-options" id="chatOptions"></div>
+    <div class="chat-input-row">
+      <input class="chat-input" id="chatInput" type="text" placeholder="Type a message…" autocomplete="off" />
+      <button class="chat-send" id="chatSendBtn" aria-label="Send">
+        <svg viewBox="0 0 24 24"><path d="M22 2L11 13M22 2L15 22l-4-9-9-4 20-7z"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <script>
+    // ── Navbar scroll ──────────────────────────────────────────────
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
+
+    // ── Mobile hamburger ───────────────────────────────────────────
+    const hamburger = document.getElementById('hamburger');
+    const navLinks  = document.getElementById('navLinks');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      navLinks.classList.toggle('open');
+    });
+    hamburger.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') hamburger.click();
+    });
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        navLinks.classList.remove('open');
+      });
+    });
+
+    // ── Scroll reveal ──────────────────────────────────────────────
+    const revealEls = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    revealEls.forEach(el => observer.observe(el));
+
+    // Hero elements visible immediately
+    document.querySelectorAll('#hero .reveal').forEach(el => {
+      el.classList.add('visible');
+    });
+
+    // ── Contact form (Netlify Forms) ────────────────────────────────
+    function handleSubmit(e) {
+      e.preventDefault();
+      const form    = document.getElementById('contactForm');
+      const data    = new FormData(form);
+
+      fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(data).toString() })
+        .then(() => {
+          form.style.display = 'none';
+          document.getElementById('formSuccess').style.display = 'block';
+        })
+        .catch(() => {
+          alert('Something went wrong. Please try WhatsApp or try again.');
+        });
+    }
+
+    // ── Before & After slider ─────────────────────────────────────
+    (function() {
+      const wrapper = document.getElementById('baWrapper');
+      const after   = document.getElementById('baAfter');
+      const handle  = document.getElementById('baHandle');
+      if (!wrapper) return;
+
+      let dragging = false;
+
+      function setPos(x) {
+        const rect = wrapper.getBoundingClientRect();
+        let pct = (x - rect.left) / rect.width;
+        pct = Math.max(0.08, Math.min(0.92, pct));
+        const pctStr = (pct * 100).toFixed(2) + '%';
+        after.style.width  = pctStr;
+        handle.style.left  = pctStr;
+      }
+
+      handle.addEventListener('mousedown',  () => dragging = true);
+      wrapper.addEventListener('mousemove', e => { if (dragging) setPos(e.clientX); });
+      window.addEventListener('mouseup',    () => dragging = false);
+
+      handle.addEventListener('touchstart', e => { dragging = true; e.preventDefault(); }, { passive: false });
+      wrapper.addEventListener('touchmove', e => { if (dragging) setPos(e.touches[0].clientX); e.preventDefault(); }, { passive: false });
+      window.addEventListener('touchend',   () => dragging = false);
+
+      wrapper.addEventListener('click', e => setPos(e.clientX));
+    })();
+
+    // ── Chatbot ────────────────────────────────────────────────────
+    (function() {
+      const bubble   = document.getElementById('chatBubble');
+      const win      = document.getElementById('chatWindow');
+      const msgs     = document.getElementById('chatMessages');
+      const options  = document.getElementById('chatOptions');
+      const input    = document.getElementById('chatInput');
+      const sendBtn  = document.getElementById('chatSendBtn');
+      const notif    = document.getElementById('chatNotif');
+      let   started  = false;
+
+      // Decision tree
+      const tree = {
+        start: {
+          bot: "Hi there! 👋 I'm Craft, SiteCraft's assistant. What can I help you with today?",
+          options: [
+            { label: "💻 I need a new website",         next: 'newSite' },
+            { label: "🔧 My website needs updating",    next: 'reno' },
+            { label: "💷 How much does it cost?",       next: 'pricing' },
+            { label: "⏱️ How long does it take?",       next: 'turnaround' },
+          ]
+        },
+        newSite: {
+          bot: "Great choice! A brand new website starts from just £200 — one flat payment, nothing hidden. Do you currently have any online presence?",
+          options: [
+            { label: "No, starting from scratch",  next: 'newScratch' },
+            { label: "I only have social media",   next: 'newSocial' },
+          ]
+        },
+        newScratch: {
+          bot: "Perfect — that's exactly what SiteCraft is here for. I'll build you a clean, fast, mobile-friendly site in 7–10 days. Want to get a free no-obligation quote?",
+          options: [
+            { label: "✅ Yes, get a free quote", next: 'goQuote' },
+            { label: "📋 What's included?",      next: 'included' },
+          ]
+        },
+        newSocial: {
+          bot: "Social media is great, but a proper website builds far more trust with customers. I'll make sure it links up perfectly with your socials too. Ready for a free quote?",
+          options: [
+            { label: "✅ Yes, get a free quote", next: 'goQuote' },
+            { label: "📋 What's included?",      next: 'included' },
+          ]
+        },
+        reno: {
+          bot: "No problem — website renovations also start at £200. How would you describe your current site?",
+          options: [
+            { label: "It looks really outdated",       next: 'renoOld' },
+            { label: "It's broken or not working",     next: 'renoBroken' },
+            { label: "It's just not getting results",  next: 'renoResults' },
+          ]
+        },
+        renoOld: {
+          bot: "That's the most common one! An outdated site can actually put customers off. I'll give it a full modern redesign while keeping your content and domain. Want a free quote?",
+          options: [
+            { label: "✅ Yes, free quote please", next: 'goQuote' },
+            { label: "📋 What's included?",       next: 'included' },
+          ]
+        },
+        renoBroken: {
+          bot: "A broken website is losing you customers every day — let's fix that fast. I'll rebuild it properly so everything works perfectly. Want me to take a look?",
+          options: [
+            { label: "✅ Yes, get in touch",  next: 'goQuote' },
+            { label: "💷 How much?",          next: 'pricing' },
+          ]
+        },
+        renoResults: {
+          bot: "A website that doesn't convert visitors is just a cost. I'll redesign it with a focus on getting customers to actually contact you. Want a free quote?",
+          options: [
+            { label: "✅ Yes, free quote please", next: 'goQuote' },
+            { label: "📋 What's included?",       next: 'included' },
+          ]
+        },
+        pricing: {
+          bot: "Really straightforward pricing here:\n\n💻 New Website — £200 one-off\n🔧 Website Renovation — £200 one-off\n🛡️ Monthly Maintenance — £20/month\n\nNo hidden fees, no ongoing platform costs.",
+          options: [
+            { label: "✅ Get a free quote",          next: 'goQuote' },
+            { label: "📋 What's included?",          next: 'included' },
+            { label: "⏱️ How long does it take?",   next: 'turnaround' },
+          ]
+        },
+        turnaround: {
+          bot: "Most websites are built and live within 7–10 working days from when you send your details over. If you need it faster, just mention it — I'll do my best.",
+          options: [
+            { label: "✅ Get a free quote",     next: 'goQuote' },
+            { label: "💷 How much does it cost?", next: 'pricing' },
+          ]
+        },
+        included: {
+          bot: "Every website includes:\n✔ Custom design\n✔ Mobile-friendly on all devices\n✔ Contact form\n✔ Basic SEO setup\n✔ Fast & secure (HTTPS)\n✔ Deployed to your domain\n\nRenovations also include migrating all your existing content.",
+          options: [
+            { label: "✅ Sounds good — free quote", next: 'goQuote' },
+            { label: "💷 Remind me of the price",   next: 'pricing' },
+          ]
+        },
+        goQuote: {
+          bot: "Brilliant! The quickest way is to either fill in the contact form on this page, or message directly on WhatsApp. I'll get back to you within a few hours. 🙌",
+          options: [
+            { label: "📝 Go to the contact form",  next: 'doForm' },
+            { label: "💬 Open WhatsApp",           next: 'doWhatsApp' },
+          ]
+        },
+        doForm:     { bot: null, action: 'form' },
+        doWhatsApp: { bot: null, action: 'whatsapp' },
+      };
+
+      function scrollBottom() {
+        msgs.scrollTop = msgs.scrollHeight;
+      }
+
+      function addMsg(text, who) {
+        const wrap = document.createElement('div');
+        wrap.className = 'chat-msg ' + who;
+        const av = document.createElement('div');
+        av.className = 'chat-msg-avatar';
+        av.textContent = who === 'bot' ? '🤖' : '👤';
+        const bub = document.createElement('div');
+        bub.className = 'chat-msg-bubble';
+        bub.style.whiteSpace = 'pre-line';
+        bub.textContent = text;
+        wrap.appendChild(av);
+        wrap.appendChild(bub);
+        msgs.appendChild(wrap);
+        scrollBottom();
+      }
+
+      function showTyping() {
+        const wrap = document.createElement('div');
+        wrap.className = 'chat-typing';
+        wrap.id = 'typingIndicator';
+        wrap.innerHTML = '<div class="chat-typing-avatar">🤖</div><div class="chat-typing-bubble"><span></span><span></span><span></span></div>';
+        msgs.appendChild(wrap);
+        scrollBottom();
+        return wrap;
+      }
+
+      function clearOptions() {
+        options.innerHTML = '';
+        input.value = '';
+      }
+
+      function showOptions(opts) {
+        clearOptions();
+        opts.forEach(opt => {
+          const btn = document.createElement('button');
+          btn.className = 'chat-option';
+          btn.textContent = opt.label;
+          btn.addEventListener('click', () => handleOption(opt));
+          options.appendChild(btn);
+        });
+      }
+
+      function handleOption(opt) {
+        addMsg(opt.label, 'user');
+        clearOptions();
+        goToNode(opt.next);
+      }
+
+      function goToNode(key) {
+        const node = tree[key];
+        if (!node) return;
+
+        // Actions
+        if (node.action === 'form') {
+          setTimeout(() => {
+            win.classList.remove('open');
+            bubble.classList.remove('open');
+            const target = document.querySelector('#contact');
+            if (target) {
+              const offset = document.getElementById('navbar').offsetHeight + 16;
+              window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - offset, behavior: 'smooth' });
+            }
+          }, 300);
+          return;
+        }
+        if (node.action === 'whatsapp') {
+          setTimeout(() => {
+            window.open('https://wa.me/447535056319?text=Hi%2C%20I%27d%20like%20a%20free%20quote%20for%20a%20website', '_blank');
+          }, 300);
+          return;
+        }
+
+        const typing = showTyping();
+        setTimeout(() => {
+          typing.remove();
+          if (node.bot) addMsg(node.bot, 'bot');
+          if (node.options && node.options.length) showOptions(node.options);
+        }, 900 + Math.random() * 400);
+      }
+
+      function handleUserText() {
+        const text = input.value.trim();
+        if (!text) return;
+        addMsg(text, 'user');
+        input.value = '';
+        clearOptions();
+
+        // Simple keyword matching for free-text input
+        const t = text.toLowerCase();
+        if (t.match(/price|cost|how much|£/))         goToNode('pricing');
+        else if (t.match(/how long|time|days|fast/))  goToNode('turnaround');
+        else if (t.match(/include|what.*get|feature/))goToNode('included');
+        else if (t.match(/new|build|start/))          goToNode('newSite');
+        else if (t.match(/old|broken|fix|redo|renov/))goToNode('reno');
+        else if (t.match(/quote|contact|talk|whatsapp|call/)) goToNode('goQuote');
+        else {
+          const typing = showTyping();
+          setTimeout(() => {
+            typing.remove();
+            addMsg("I'm not sure about that one! Here are some things I can help with:", 'bot');
+            showOptions(tree.start.options);
+          }, 800);
+        }
+      }
+
+      // Toggle open/close
+      bubble.addEventListener('click', () => {
+        const isOpen = win.classList.toggle('open');
+        bubble.classList.toggle('open', isOpen);
+        notif.style.display = 'none';
+        if (isOpen && !started) {
+          started = true;
+          goToNode('start');
+        }
+      });
+
+      // Send on enter / button
+      input.addEventListener('keydown', e => { if (e.key === 'Enter') handleUserText(); });
+      sendBtn.addEventListener('click', handleUserText);
+
+      // Show notification after 4s to entice a click
+      setTimeout(() => { notif.style.display = 'flex'; }, 4000);
+    })();
+
+    // ── Smooth anchor offset (account for fixed nav) ───────────────
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (!target) return;
+        e.preventDefault();
+        const offset = navbar.offsetHeight + 16;
+        const top = target.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({ top, behavior: 'smooth' });
+      });
+    });
+  </script>
+</body>
+</html>
